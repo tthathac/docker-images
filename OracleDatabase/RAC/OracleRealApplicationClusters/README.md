@@ -117,7 +117,7 @@ To assist in building the images, you can use the [buildDockerImage.sh](https://
 
 ```
 ./buildDockerImage.sh -v (Software Version)
-#  e.g., ./buildDockerImage.sh -v 19.3.0
+#  e.g., ./buildDockerImage.sh -v 21.3.0
 ```
 
 For detailed usage of command, please execute following command:
@@ -221,7 +221,7 @@ Now create the Docker container using the image. For the details of environment 
   --restart=always --tmpfs=/run -v /sys/fs/cgroup:/sys/fs/cgroup:ro \
   --cpu-rt-runtime=95000 --ulimit rtprio=99  \
   --name racnode1 \
-  oracle/database-rac:19.3.0
+  oracle/database-rac:21.3.0
 ```
 
 **Note:** Change environment variable such as IPs, ASM_DEVICE_LIST, PWD_FILE and PWD_KEY based on your env. Also, change the devices based on your env.
@@ -265,7 +265,7 @@ Now create the Docker container using the image. For the details of environment 
   --cpu-rt-runtime=95000 \
   --ulimit rtprio=99  \
   --name racnode1 \
-  oracle/database-rac:19.3.0
+  oracle/database-rac:21.3.0
 ```
 
 **Notes:**
@@ -387,7 +387,7 @@ To create additional nodes, use following command:
   --ulimit rtprio=99  \
   --restart=always \
   --name racnode2 \
-  oracle/database-rac:19.3.0
+  oracle/database-rac:21.3.0
 ```
 
 For details of all environment variables and parameters, please refer to section 6.
@@ -425,7 +425,7 @@ For example:
   -e SCAN_NAME=racnode-scan \
   -e SCAN_IP=172.16.1.70 \
   -e ASM_DISCOVERY_DIR=/oradata \
-  -e ASM_DEVICE_LIST=/oradata/asm_disk01.img,/oradata/asm_disk02.img,/oradata/asm_disk03.img  ,/oradata/asm_disk04.img,/oradata/asm_disk05.img \
+  -e ASM_DEVICE_LIST=/oradata/asm_disk01.img,/oradata/asm_disk02.img,/oradata/asm_disk03.imgv,/oradata/asm_disk04.img,/oradata/asm_disk05.img \
   -e ORACLE_SID=ORCLCDB \
   -e OP_TYPE=ADDNODE \
   -e COMMON_OS_PWD_FILE=common_os_pwdfile.enc \
@@ -435,7 +435,7 @@ For example:
   --ulimit rtprio=99  \
   --restart=always \
   --name racnode2 \
-  container-registry.oracle.com/database/rac:19.3.0
+  oracle/database-rac:21.3.0
 ```
 
 **Notes:**
