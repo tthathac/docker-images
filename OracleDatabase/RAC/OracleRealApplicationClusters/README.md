@@ -7,15 +7,9 @@ For more information on Oracle RAC Database 19c refer to the [Oracle Database do
 ## How to build and run
 
 This project offers sample Docker files for Oracle Grid Infrastructure and Real Application Cluster Database:
- * Oracle Database 19c Grid Infrastructure (19.3) for Linux x86-64
- * Oracle Database 19c (19.3) for Linux x86-64 
- * Oracle Database 18c Grid Infrastructure (18.3) for Linux x86-64
- * Oracle Database 18c (18.3) for Linux x86-64
- * Oracle Database 12c Release 2 Grid Infrastructure (12.2.0.1.0) for Linux x86-64
- * Oracle Database 12c Release 2 (12.2.0.1.0) Enterprise Edition for Linux x86-64
-
-test
-
+ * Oracle Database 21c Grid Infrastructure (21.3) for Linux x86-64
+ * Oracle Database 21c (21.3) for Linux x86-64 
+ 
 IMPORTANT: You can build and run RAC containers on a single host or multiple hosts. To access the RAC DB on your network either use the Docker MACVLAN driver or use Oracle Connection Manager. To Run RAC containers on Multi-Host, you must use the Docker MACVLAN driver and your network must be reachable on all the nodes for RAC containers.
 
 
@@ -44,7 +38,7 @@ All data files, control files, redo log files, and the server parameter file (`S
 
 You must provide block devices shared across the hosts.  If you don't have shared block storage, you can use an NFS volume.
 
-Please refer Oracle Database 19c Release documentation [Oracle Grid Infrastructure Installation and Upgrade Guide](https://docs.oracle.com/en/database/oracle/oracle-database/19/cwlin/index.html) and allocate following resource as per the Oracle documentation.
+Please refer Oracle Database 21c Release documentation [Oracle Grid Infrastructure Installation and Upgrade Guide](https://docs.oracle.com/en/database/oracle/oracle-database/21/cwlin/index.html) and allocate following resource as per the Oracle documentation.
 
 1. You must configure the following addresses manually in your DNS.
    * Public IP address for each container
@@ -100,12 +94,12 @@ Once you have edited the `/etc/sysconfig/docker`, execute following commands:
 # systemctl start docker
 ```
 
-Verify you have enough memory and cpu resources available for container. For details, Please refer to [Oracle 19c Grid Infrastructure Installation and Upgrade Guide](https://docs.oracle.com/en/database/oracle/oracle-database/19/cwlin/index.html)
+Verify you have enough memory and cpu resources available for container. For details, Please refer to [Oracle 21c Grid Infrastructure Installation and Upgrade Guide](https://docs.oracle.com/en/database/oracle/oracle-database/21/cwlin/index.html)
 
 The Oracle RAC dockerfiles, does not contain any Oracle Software Binaries. Download the following software from the [Oracle Technology Network](https://www.oracle.com/technetwork/database/enterprise-edition/downloads/index.html) and stage them under dockerfiles/<version> folder.
 
-    Oracle Database 19c Grid Infrastructure (19.3) for Linux x86-64
-    Oracle Database 19c (19.3) for Linux x86-64
+    Oracle Database 21c Grid Infrastructure (21.3) for Linux x86-64
+    Oracle Database 21c (21.3) for Linux x86-64
 
 ### Notes
 
