@@ -9,7 +9,13 @@ For more information on Oracle RAC Database 21c refer to the [Oracle Database do
 This project offers sample Docker files for Oracle Grid Infrastructure and Real Application Cluster Database:
  * Oracle Database 21c Grid Infrastructure (21.3) for Linux x86-64
  * Oracle Database 21c (21.3) for Linux x86-64 
- 
+ * Oracle Database 19c Grid Infrastructure (19.3) for Linux x86-64
+ * Oracle Database 19c (19.3) for Linux x86-64
+ * Oracle Database 18c Grid Infrastructure (18.3) for Linux x86-64
+ * Oracle Database 18c (18.3) for Linux x86-64
+ * Oracle Database 12c Release 2 Grid Infrastructure (12.2.0.1.0) for Linux x86-64
+ * Oracle Database 12c Release 2 (12.2.0.1.0) Enterprise Edition for Linux x86-64
+
 IMPORTANT: You can build and run RAC containers on a single host or multiple hosts. To access the RAC DB on your network either use the Docker MACVLAN driver or use Oracle Connection Manager. To Run RAC containers on Multi-Host, you must use the Docker MACVLAN driver and your network must be reachable on all the nodes for RAC containers.
 
 
