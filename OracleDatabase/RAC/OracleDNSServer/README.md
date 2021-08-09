@@ -12,7 +12,6 @@
 # Create Network
 
 docker network create --driver=bridge --subnet=172.16.1.0/24 rac_pub1_nw
-
 docker network create --driver=bridge --subnet=192.168.17.0/24 rac_priv1_nw
 
 # Create the DNS container
