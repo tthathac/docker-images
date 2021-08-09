@@ -199,7 +199,8 @@ Now create the Docker container using the image. For the details of environment 
   --tmpfs /dev/shm:rw,exec,size=4G \
   --volume /opt/containers/rac_host_file:/etc/hosts  \
   --volume /opt/.secrets:/run/secrets \
-  --dns-search=example.com \
+  --dns=172.16.1.25 \
+  --dns-search=internal.us.oracle.com \
   --device=/dev/xvde:/dev/asm_disk1  \
   --device=/dev/xvdf:/dev/asm_disk2 \
   --privileged=false  \
@@ -213,9 +214,9 @@ Now create the Docker container using the image. For the details of environment 
   -e PUBLIC_IP=172.16.1.150 \
   -e PUBLIC_HOSTNAME=racnode1  \
   -e SCAN_NAME=racnode-scan \
-  -e SCAN_IP=172.16.1.70  \
+  -e SCAN_IP=172.16.1.70  \ 
   -e OP_TYPE=INSTALL \
-  -e DOMAIN=example.com \
+  -e DOMAIN=internal.us.oracle.com \
   -e ASM_DEVICE_LIST=/dev/asm_disk1,/dev/asm_disk2 \
   -e ASM_DISCOVERY_DIR=/dev \
   -e CMAN_HOSTNAME=racnode-cman1 \
@@ -242,7 +243,8 @@ Now create the Docker container using the image. For the details of environment 
   --tmpfs /dev/shm:rw,exec,size=4G \
   --volume /opt/containers/rac_host_file:/etc/hosts  \
   --volume /opt/.secrets:/run/secrets \
-  --dns-search=example.com \
+  --dns=172.16.1.25 \
+  --dns-search=internal.us.oracle.com \
   --privileged=false \
   --volume racstorage:/oradata \
   --cap-add=SYS_NICE \
@@ -257,7 +259,7 @@ Now create the Docker container using the image. For the details of environment 
   -e SCAN_NAME=racnode-scan \
   -e SCAN_IP=172.16.1.70  \
   -e OP_TYPE=INSTALL \
-  -e DOMAIN=example.com \
+  -e DOMAIN=internal.us.oracle.com \
   -e ASM_DISCOVERY_DIR=/oradata \
   -e ASM_DEVICE_LIST=/oradata/asm_disk01.img,/oradata/asm_disk02.img,/oradata/asm_disk03.img,/oradata/asm_disk04.img,/oradata/asm_disk05.img  \
   -e CMAN_HOSTNAME=racnode-cman1 \
@@ -364,6 +366,8 @@ To create additional nodes, use following command:
   --dns-search=example.com  \
   --volume /opt/containers/rac_host_file:/etc/hosts \
   --volume /opt/.secrets:/run/secrets \
+  --dns=172.16.1.25 \
+  --dns-search=internal.us.oracle.com \
   --device=/dev/xvde:/dev/asm_disk1 \
   --device=/dev/zvdf:/dev/asm_disk2 \
   --privileged=false \
@@ -377,7 +381,7 @@ To create additional nodes, use following command:
   -e PRIV_HOSTNAME=racnode2-priv \
   -e PUBLIC_IP=172.16.1.151  \
   -e PUBLIC_HOSTNAME=racnode2  \
-  -e DOMAIN=example.com \
+  -e DOMAIN=internal.us.oracle.com \
   -e SCAN_NAME=racnode-scan \
   -e SCAN_IP=172.16.1.70 \
   -e ASM_DISCOVERY_DIR=/dev \
@@ -413,6 +417,8 @@ For example:
   --dns-search=example.com  \
   --volume /opt/containers/rac_host_file:/etc/hosts \
   --volume /opt/.secrets:/run/secrets \
+  --dns=172.16.1.25 \
+  --dns-search=internal.us.oracle.com \
   --privileged=false \
   --volume racstorage:/oradata \
   --cap-add=SYS_NICE \
@@ -425,7 +431,7 @@ For example:
   -e PRIV_HOSTNAME=racnode2-priv \
   -e PUBLIC_IP=172.16.1.151  \
   -e PUBLIC_HOSTNAME=racnode2  \
-  -e DOMAIN=example.com \
+  -e DOMAIN=internal.us.oracle.com \
   -e SCAN_NAME=racnode-scan \
   -e SCAN_IP=172.16.1.70 \
   -e ASM_DISCOVERY_DIR=/oradata \
