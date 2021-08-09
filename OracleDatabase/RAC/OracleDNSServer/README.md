@@ -3,9 +3,9 @@
 1. Clone the repository from the [DNS GIT repository](https://github.com/tthathac/docker-images/tree/patch-1)
 2. cd OracleDatabase/RAC/OracleDNSServer/dockerfiles
 3. export https_proxy=http://www-proxy-hqdc.us.oracle.com:80/
-   export https_proxy=http://www-proxy-hqdc.us.oracle.com:80/
-   ./buildDockerImage.sh -v 4.1
-   docker images
+4. export https_proxy=http://www-proxy-hqdc.us.oracle.com:80/
+5. ./buildDockerImage.sh -v 4.1
+6. docker images
 
    You should see that oracle/rac-dns-server:4.1 is created. You can name it anything based on your requirement.
 
