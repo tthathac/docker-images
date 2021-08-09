@@ -41,3 +41,18 @@ Use the following command ( replace appropriately if needed ) to create the DNS 
 --privileged=false \\
 
 --name rac-dnsserver oracle/rac-dns-server:19.3.0
+
+# Network Details
+The subnet mask used is : 255.255.192.0. So the CIDR is /18.
+
+PUBLIC_SUBNET="192.168.17"
+PRIVATE_SUBNET="192.168.150"
+PRIVATE_SUBNET2="192.168.200"
+PUBLIC_VIP_SUBNET="192.168.18"
+PUBLIC_SVIP_SUBNET="192.168.19"
+SCAN3_SUBNET="192.168.16"
+SCAN2_SUBNET="192.168.15"
+SCAN1_SUBNET="192.168.14"
+GNS_SUBNET="192.168.13"
+GNS_VIP_SUBNET="192.168.12"
+CMAN_SUBNET="192.168.100"
