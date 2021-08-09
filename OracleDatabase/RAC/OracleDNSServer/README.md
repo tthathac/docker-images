@@ -9,12 +9,6 @@
 
    You should see that oracle/rac-dns-server:4.1 is created. You can name it anything based on your requirement.
 
-# Create Network
-
-docker network create --driver=bridge --subnet=172.16.1.0/24 rac_pub1_nw
-
-docker network create --driver=bridge --subnet=192.168.17.0/24 rac_priv1_nw
-
 # Create the DNS container
 Use the following command ( replace appropriately if needed ) to create the DNS container.
 
@@ -40,11 +34,15 @@ Use the following command ( replace appropriately if needed ) to create the DNS 
 
 --privileged=false \\
 
---name rac-dnsserver oracle/rac-dns-server:19.3.0
+--name rac-dnsserver oracle/rac-dns-server:4.1
 
 # Network Details
 The subnet mask used is : 255.255.192.0. So the CIDR is /18.
-The network and the hostname resolution is : 
+The network and the hostname resolution is :
+
+CIDR=18
+
+EXTERNAL_NETWORK=172.16.1
 
 PUBLIC_SUBNET="192.168.17" : racnode1-racnode250
 
@@ -67,3 +65,13 @@ GNS_SUBNET="192.168.13" : racnode-gns1 - racnode-gns250
 GNS_VIP_SUBNET="192.168.12" : racnode-gns1-vip - racnode-gns250-vip
 
 CMAN_SUBNET="192.168.100" : racnode-cman1 - racnode-cman250
+
+# Create Networks
+docker network create --driver=bridge --subnet=$EXTERNAL_NETWORK.0/24 --gateway=$EXTERNAL_NETWORK.1 rac_eth3ext1_nw
+
+docker network create --driver=bridge --subnet=$PUBLIC_NETWORK.0/$CIDR rac_eth0pub1_nw
+
+docker network create --driver=bridge --subnet=$PRIVATE_NETWORK.0/$CIDR rac_eth1priv1_nw
+
+docker network create --driver=bridge --subnet=$PRIVATE_NETWORK2.0/$CIDR rac_eth2priv2_nw
+
