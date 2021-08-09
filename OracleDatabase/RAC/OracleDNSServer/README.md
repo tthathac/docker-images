@@ -44,15 +44,26 @@ Use the following command ( replace appropriately if needed ) to create the DNS 
 
 # Network Details
 The subnet mask used is : 255.255.192.0. So the CIDR is /18.
+The network and the hostname resolution is : 
 
-PUBLIC_SUBNET="192.168.17"
-PRIVATE_SUBNET="192.168.150"
-PRIVATE_SUBNET2="192.168.200"
-PUBLIC_VIP_SUBNET="192.168.18"
-PUBLIC_SVIP_SUBNET="192.168.19"
-SCAN3_SUBNET="192.168.16"
-SCAN2_SUBNET="192.168.15"
-SCAN1_SUBNET="192.168.14"
-GNS_SUBNET="192.168.13"
-GNS_VIP_SUBNET="192.168.12"
-CMAN_SUBNET="192.168.100"
+PUBLIC_SUBNET="192.168.17" : racnode1-racnode250
+
+PRIVATE_SUBNET="192.168.150" : racnode1-priv - racnode250-priv
+
+PRIVATE_SUBNET2="192.168.200" : racnode-priv2 - racnode250-priv2
+
+PUBLIC_VIP_SUBNET="192.168.18" : racnode1-vip - racnode250-vip
+
+PUBLIC_SVIP_SUBNET="192.168.19" : racnode1-svip[1-4] - racnode63-svip[1-4]
+
+SCAN3_SUBNET="192.168.16" : racnode-scan1  - racnode-scan250
+
+SCAN2_SUBNET="192.168.15" : racnode-scan1  - racnode-scan250
+
+SCAN1_SUBNET="192.168.14" : racnode-scan1  - racnode-scan250
+
+GNS_SUBNET="192.168.13" : racnode-gns1 - racnode-gns250
+
+GNS_VIP_SUBNET="192.168.12" : racnode-gns1-vip - racnode-gns250-vip
+
+CMAN_SUBNET="192.168.100" : racnode-cman1 - racnode-cman250
