@@ -12,9 +12,11 @@
 # Create Network
 
 docker network create --driver=bridge --subnet=172.16.1.0/24 rac_pub1_nw
+
 docker network create --driver=bridge --subnet=192.168.17.0/24 rac_priv1_nw
 
 # Create the DNS container
+Use the following command ( replace appropriately if needed ) to create the DNS container.
 
 /usr/bin/docker run -d --hostname racdns --dns-search=us.oracle.com \
 --network=rac_pub1_nw --ip=172.16.1.25 \
