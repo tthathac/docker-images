@@ -1,6 +1,6 @@
 # LICENSE UPL 1.0
 #
-# Copyright (c) 1982-2018 Oracle and/or its affiliates. All rights reserved.
+# Copyright (c) 1982-2021 Oracle and/or its affiliates. All rights reserved.
 #
 # ORACLE DOCKERFILES PROJECT
 # --------------------------
@@ -26,9 +26,7 @@ MAINTAINER Paramdeep saini <paramdeep.saini@oracle.com>, Sanjay Singh <sanjay.si
 ENV SETUP_LINUX_FILE="setupLinuxEnv.sh" \
     INSTALL_DIR="/opt/scripts" \
     ZONEFILE="zonefile" \
-    PRIVATE_ZONEFILE="priv_zonefile" \
     REVERSE_ZONE_FILE="reversezonefile" \
-    PRIVATE_REVERSE_ZONE_FILE="priv_reversezonefile" \
     NAMED_SAMPLE_FILE="named.rfc1912.zones" \
     NAMED_CONF_FILE="named.conf" \
     NAMED_CHROOT_ETC_DIR="/var/named/chroot/etc" \
@@ -55,7 +53,7 @@ ENV  INSTALL_SCRIPTS=$INSTALL_DIR/install  \
 COPY $SETUP_LINUX_FILE $INSTALL_SCRIPTS/
 
 # Setup Scripts
-COPY $RUN_FILE $ZONEFILE $PRIVATE_ZONEFILE $REVERSE_ZONE_FILE $PRIVATE_REVERSE_ZONE_FILE $NAMED_SAMPLE_FILE $FUNCTIONS $NAMED_LOOPBACK_FILE $NAMED_EMPTY_FILE $NAMED_LOCALHOST_FILE $CONFIG_DNS_SERVER_FILE $NAMED_CONF_FILE $SCRIPT_DIR/
+COPY $RUN_FILE $ZONEFILE $REVERSE_ZONE_FILE $NAMED_SAMPLE_FILE $FUNCTIONS $NAMED_LOOPBACK_FILE $NAMED_EMPTY_FILE $NAMED_LOCALHOST_FILE $CONFIG_DNS_SERVER_FILE $NAMED_CONF_FILE $SCRIPT_DIR/
 
 COPY $SETUP_LINUX_FILE $SUDO_SETUP_FILE $INSTALL_DIR/install/
 
@@ -67,8 +65,6 @@ RUN  chmod 755 $INSTALL_DIR/install/*.sh && \
      chmod 755 $SCRIPT_DIR/*.sh && \
      chmod 666 $SCRIPT_DIR/$ZONEFILE && \
      chmod 666 $SCRIPT_DIR/$REVERSE_ZONE_FILE && \
-     chmod 666 $SCRIPT_DIR/$PRIVATE_ZONEFILE && \
-     chmod 666 $SCRIPT_DIR/$PRIVATE_REVERSE_ZONE_FILE && \
      chmod 666 $SCRIPT_DIR/$NAMED_SAMPLE_FILE && \
      echo "nohup $SCRIPT_DIR/runOracle.sh &" >> /etc/rc.local && \
      chmod +x /etc/rc.d/rc.local  && \
